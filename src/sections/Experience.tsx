@@ -16,10 +16,7 @@ function ExperienceRow({ entry, index }: { entry: Entry; index: number }) {
       className="grid grid-cols-1 gap-4 border-t border-cream/15 py-8 sm:grid-cols-[1fr_2fr] sm:gap-10"
     >
       <div>
-        <div className="flex items-baseline gap-3">
-          <span className="text-xs tabular-nums text-cream/40">{String(index + 1).padStart(2, '0')}</span>
-          <p className="font-hn text-xl text-cream sm:text-2xl">{entry.company}</p>
-        </div>
+        <p className="font-hn text-xl text-cream sm:text-2xl">{entry.company}</p>
         <p className="mt-1 text-sm text-cream/60">{entry.role}</p>
         <p className="mt-1 text-sm text-cream/40">
           {entry.date}
