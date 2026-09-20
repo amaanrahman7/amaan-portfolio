@@ -9,11 +9,17 @@ type Entry = {
   bullets: string[]
 }
 
-function ExperienceRow({ entry, delay = 0 }: { entry: Entry; delay?: number }) {
+function ExperienceRow({ entry, index }: { entry: Entry; index: number }) {
   return (
-    <Reveal delay={delay} className="grid grid-cols-1 gap-4 border-t border-cream/15 py-8 sm:grid-cols-[1fr_2fr] sm:gap-10">
+    <Reveal
+      delay={index * 80}
+      className="grid grid-cols-1 gap-4 border-t border-cream/15 py-8 sm:grid-cols-[1fr_2fr] sm:gap-10"
+    >
       <div>
-        <p className="font-hn text-xl text-cream sm:text-2xl">{entry.company}</p>
+        <div className="flex items-baseline gap-3">
+          <span className="text-xs tabular-nums text-cream/40">{String(index + 1).padStart(2, '0')}</span>
+          <p className="font-hn text-xl text-cream sm:text-2xl">{entry.company}</p>
+        </div>
         <p className="mt-1 text-sm text-cream/60">{entry.role}</p>
         <p className="mt-1 text-sm text-cream/40">
           {entry.date}
@@ -39,14 +45,14 @@ function Experience() {
 
         <div className="mt-10">
           {WORK_EXPERIENCE.map((entry, i) => (
-            <ExperienceRow key={entry.company} entry={entry} delay={i * 80} />
+            <ExperienceRow key={entry.company} entry={entry} index={i} />
           ))}
         </div>
 
         <p className="mt-20 text-xs uppercase tracking-[0.3em] text-cream/50">Leadership</p>
         <div className="mt-10">
-          {LEADERSHIP_EXPERIENCE.map((entry) => (
-            <ExperienceRow key={entry.company} entry={entry} />
+          {LEADERSHIP_EXPERIENCE.map((entry, i) => (
+            <ExperienceRow key={entry.company} entry={entry} index={i} />
           ))}
         </div>
 

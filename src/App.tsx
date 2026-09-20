@@ -16,6 +16,7 @@ function App() {
         <Projects />
         <Contact />
       </main>
+      <div className="grain-overlay" aria-hidden="true" />
     </>
   )
 }
