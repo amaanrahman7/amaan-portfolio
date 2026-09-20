@@ -1,4 +1,5 @@
 import { PROJECTS } from '../data/content'
+import Reveal from '../components/Reveal'
 
 function Projects() {
   return (
@@ -7,9 +8,10 @@ function Projects() {
         <p className="text-xs uppercase tracking-[0.3em] text-cream/50">Projects</p>
 
         <div className="mt-10">
-          {PROJECTS.map((project) => (
-            <div
+          {PROJECTS.map((project, i) => (
+            <Reveal
               key={project.name}
+              delay={i * 80}
               className="grid grid-cols-1 gap-4 border-t border-cream/15 py-8 sm:grid-cols-[1fr_2fr] sm:gap-10"
             >
               <div>
@@ -34,7 +36,7 @@ function Projects() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

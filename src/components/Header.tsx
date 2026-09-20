@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { X } from 'lucide-react'
 import { NAV_LINKS, SOCIAL_LINKS } from '../data/content'
 
-function isExternal(href: string) {
-  return href.startsWith('http')
+function opensNewTab(href: string) {
+  return !href.startsWith('#') && !href.startsWith('mailto:')
 }
 
 function Header() {
@@ -65,8 +65,8 @@ function Header() {
               <a
                 key={link.label}
                 href={link.href}
-                target={isExternal(link.href) ? '_blank' : undefined}
-                rel={isExternal(link.href) ? 'noopener noreferrer' : undefined}
+                target={opensNewTab(link.href) ? '_blank' : undefined}
+                rel={opensNewTab(link.href) ? 'noopener noreferrer' : undefined}
                 className="anim-fade-up transition-opacity duration-300 hover:opacity-60"
                 style={{ animationDelay: `${1150 + i * 80}ms` }}
               >
@@ -171,8 +171,8 @@ function Header() {
             <a
               key={link.label}
               href={link.href}
-              target={isExternal(link.href) ? '_blank' : undefined}
-              rel={isExternal(link.href) ? 'noopener noreferrer' : undefined}
+              target={opensNewTab(link.href) ? '_blank' : undefined}
+              rel={opensNewTab(link.href) ? 'noopener noreferrer' : undefined}
               className="text-sm text-cream transition-all duration-500 ease-out"
               style={{
                 transitionDelay: open ? `${550 + i * 60}ms` : '0ms',

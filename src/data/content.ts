@@ -9,6 +9,7 @@ export const SOCIAL_LINKS = [
   { label: 'GitHub', href: 'https://github.com/amaanrahman7' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/amaaan/' },
   { label: 'Email', href: 'mailto:amaanrahman9@gmail.com' },
+  { label: 'Resume', href: '/amaan-rahman-resume.pdf' },
 ]
 
 export const BIO =

@@ -1,4 +1,5 @@
 import { EDUCATION, LEADERSHIP_EXPERIENCE, WORK_EXPERIENCE } from '../data/content'
+import Reveal from '../components/Reveal'
 
 type Entry = {
   company: string
@@ -8,9 +9,9 @@ type Entry = {
   bullets: string[]
 }
 
-function ExperienceRow({ entry }: { entry: Entry }) {
+function ExperienceRow({ entry, delay = 0 }: { entry: Entry; delay?: number }) {
   return (
-    <div className="grid grid-cols-1 gap-4 border-t border-cream/15 py-8 sm:grid-cols-[1fr_2fr] sm:gap-10">
+    <Reveal delay={delay} className="grid grid-cols-1 gap-4 border-t border-cream/15 py-8 sm:grid-cols-[1fr_2fr] sm:gap-10">
       <div>
         <p className="font-hn text-xl text-cream sm:text-2xl">{entry.company}</p>
         <p className="mt-1 text-sm text-cream/60">{entry.role}</p>
@@ -26,7 +27,7 @@ function ExperienceRow({ entry }: { entry: Entry }) {
           </li>
         ))}
       </ul>
-    </div>
+    </Reveal>
   )
 }
 
@@ -37,8 +38,8 @@ function Experience() {
         <p className="text-xs uppercase tracking-[0.3em] text-cream/50">Experience</p>
 
         <div className="mt-10">
-          {WORK_EXPERIENCE.map((entry) => (
-            <ExperienceRow key={entry.company} entry={entry} />
+          {WORK_EXPERIENCE.map((entry, i) => (
+            <ExperienceRow key={entry.company} entry={entry} delay={i * 80} />
           ))}
         </div>
 
@@ -50,7 +51,7 @@ function Experience() {
         </div>
 
         <p className="mt-20 text-xs uppercase tracking-[0.3em] text-cream/50">Education</p>
-        <div className="mt-10 border-t border-cream/15 py-8">
+        <Reveal className="mt-10 border-t border-cream/15 py-8">
           <p className="font-hn text-xl text-cream sm:text-2xl">{EDUCATION.school}</p>
           <p className="mt-1 text-sm text-cream/60">
             {EDUCATION.degree} &middot; {EDUCATION.minor}
@@ -58,7 +59,7 @@ function Experience() {
           <p className="mt-1 text-sm text-cream/40">
             {EDUCATION.date} &middot; {EDUCATION.location}
           </p>
-        </div>
+        </Reveal>
       </div>
     </section>
   )
