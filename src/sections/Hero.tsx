@@ -9,8 +9,8 @@ function Hero() {
         style={{ animationDelay: '500ms' }}
       >
         <div className="marquee flex w-max whitespace-nowrap font-hn text-[16vh] leading-none text-cream sm:text-[26vh]">
-          <span className="pr-[6vw]">Amaan &mdash; Rahman&nbsp;</span>
-          <span className="pr-[6vw]">Amaan &mdash; Rahman&nbsp;</span>
+          <span className="pr-[6vw]">Amaan Rahman&nbsp;</span>
+          <span className="pr-[6vw]">Amaan Rahman&nbsp;</span>
         </div>
       </div>
 
