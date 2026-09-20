@@ -40,8 +40,11 @@ function Header() {
         </a>
 
         <div className="hidden items-start gap-16 sm:flex lg:gap-24">
-          <span className="anim-fade-up text-sm text-cream" style={{ animationDelay: '900ms' }}>
-            CS &apos;26
+          <span
+            className="anim-fade-up whitespace-nowrap text-sm text-cream"
+            style={{ animationDelay: '900ms' }}
+          >
+            Texas Tech Computer Science 2026
           </span>
 
           <nav className="flex flex-col gap-0.5 text-sm text-cream">

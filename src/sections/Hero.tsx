@@ -1,4 +1,4 @@
-import portrait from '../assets/photos/portrait.jpg'
+import portrait from '../assets/photos/portrait-cutout.webp'
 
 function Hero() {
   return (
@@ -15,11 +15,11 @@ function Hero() {
       </div>
 
       {/* Portrait */}
-      <div className="pointer-events-none absolute inset-0 z-20 flex items-end justify-center sm:justify-end">
+      <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center">
         <img
           src={portrait}
           alt="Amaan Rahman"
-          className="anim-rise-in h-[62vh] w-auto object-cover object-top sm:h-[74vh] sm:mr-[8vw]"
+          className="anim-rise-in h-[85vh] w-auto object-contain sm:h-[95vh]"
         />
       </div>
 
