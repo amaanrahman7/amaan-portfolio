@@ -19,7 +19,7 @@ function Hero() {
         <img
           src={portrait}
           alt="Amaan Rahman"
-          className="anim-rise-in h-[85vh] w-auto object-contain sm:h-[95vh]"
+          className="anim-rise-in h-[52vh] w-auto object-contain sm:h-[95vh]"
         />
       </div>
 
