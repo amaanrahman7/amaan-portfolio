@@ -15,6 +15,12 @@ function Contact() {
           >
             amaanrahman9@gmail.com
           </a>
+          <a
+            href="tel:+14698036470"
+            className="mt-4 block font-hn text-xl text-cream/70 transition-opacity duration-300 hover:opacity-60 sm:text-2xl"
+          >
+            (469) 803-6470
+          </a>
         </Reveal>
 
         <Reveal delay={150} className="mt-16 flex flex-wrap gap-x-10 gap-y-2 border-t border-cream/15 pt-8">
