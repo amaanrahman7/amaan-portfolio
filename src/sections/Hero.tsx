@@ -15,11 +15,11 @@ function Hero() {
       </div>
 
       {/* Portrait */}
-      <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center">
+      <div className="pointer-events-none absolute inset-0 z-20 flex items-start justify-center pt-[3vh] sm:items-center sm:pt-0">
         <img
           src={portrait}
           alt="Amaan Rahman"
-          className="anim-rise-in h-[52vh] w-auto object-contain sm:h-[95vh]"
+          className="anim-rise-in h-[70vh] w-auto object-contain sm:h-[95vh]"
         />
       </div>
 
